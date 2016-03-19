@@ -2,7 +2,7 @@ FROM fedora:23
 MAINTAINER “Emory Merryman” <emory.merryman+KsumQQd4h10X24pa@gmail.com>
 ENV container docker
 RUN dnf --assumeyes update; dnf clean all
-RUN dnf --assumeyes install systemd; dnf clean all; \
+RUN dnf --assumeyes install systemd initscripts; dnf clean all; \
 (cd /lib/systemd/system/sysinit.target.wants/; for i in *; do [ $i == systemd-tmpfiles-setup.service ] || rm -f $i; done); \
 rm -f /lib/systemd/system/multi-user.target.wants/*;\
 rm -f /etc/systemd/system/*.wants/*;\
