@@ -1,4 +1,4 @@
-FROM fedora:23
+FROM taf7lwappqystqp4u7wjsqkdc7dquw/grimdog_base
 MAINTAINER “Emory Merryman” <emory.merryman+KsumQQd4h10X24pa@gmail.com>
 ENV container docker
 RUN dnf --assumeyes update; dnf clean all
