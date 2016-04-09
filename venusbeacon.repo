@@ -1,7 +1,0 @@
-[venusbeacon]
-name=Venus Beacon
-failovermethod=priority
-baseurl=file:///srv/rpm/desertedscorpion/hollowmoon
-enabled=1
-metadata_expire=28d
-gpgcheck=0
