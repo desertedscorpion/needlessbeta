@@ -1,4 +1,4 @@
-FROM taf7lwappqystqp4u7wjsqkdc7dquw/grimdog_base
+FROM fedora:23
 MAINTAINER “Emory Merryman” <emory.merryman+KsumQQd4h10X24pa@gmail.com>
 ENV container docker
 RUN dnf install -assumeyes git && mkdir --parents /srv/rpm/desertedscorpion && git clone -C /srv/rpm/desertedscorpion https://github.com/desertedscorpion/hollowmoon.git
