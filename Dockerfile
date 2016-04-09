@@ -1,7 +1,7 @@
 FROM fedora:23
 MAINTAINER “Emory Merryman” <emory.merryman+KsumQQd4h10X24pa@gmail.com>
 ENV container docker
-RUN dnf install -assumeyes git && mkdir --parents /srv/rpm/desertedscorpion && git clone -C /srv/rpm/desertedscorpion https://github.com/desertedscorpion/hollowmoon.git
+RUN dnf install --assumeyes git && mkdir --parents /srv/rpm/desertedscorpion && git -C /srv/rpm/desertedscorpion clone https://github.com/desertedscorpion/hollowmoon.git
 COPY venusbeacon.repo /etc/yum.repos.d
 RUN dnf --assumeyes update; dnf clean all
 RUN dnf --assumeyes install systemd initscripts; dnf clean all; \
