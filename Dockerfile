@@ -1,6 +1,8 @@
 FROM taf7lwappqystqp4u7wjsqkdc7dquw/grimdog_base
 MAINTAINER “Emory Merryman” <emory.merryman+KsumQQd4h10X24pa@gmail.com>
 ENV container docker
+RUN dnf install -assumeyes git && mkdir --parents /srv/rpm/desertedscorpion && git clone -C /srv/rpm/desertedscorpion https://github.com/desertedscorpion/hollowmoon.git
+COPY venusbeacon.repo /etc/yum.repos.d
 RUN dnf --assumeyes update; dnf clean all
 RUN dnf --assumeyes install systemd initscripts; dnf clean all; \
 (cd /lib/systemd/system/sysinit.target.wants/; for i in *; do [ $i == systemd-tmpfiles-setup.service ] || rm -f $i; done); \
