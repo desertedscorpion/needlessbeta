@@ -14,5 +14,6 @@ docker build -t ninthgrimmercury/needlessbeta . &&
 	    true
     fi &&
     docker rmi --force ninthgrimmercury/needlessbeta &&
+    docker rm $(docker stop $(docker ps -a -q --filter ancestor=freakygamma/needlessbeta --format="{{.ID}}")) &&
     docker rmi --force freakygamma/needlessbeta &&
     true
