@@ -1,0 +1,5 @@
+FROM ninthgrimmercury/needlessbeta
+RUN dnf install --assumeyes openssh-server && systemctl enable sshd.service && mmkdir /root/.ssh && chmod 0700 /root/.ssh
+COPY id_rsa.pub /root/.ssh/authorized_keys
+RUN chmod 0600 /root/.ssh/authorized_keys
+CMD ["/usr/sbin/init"]
